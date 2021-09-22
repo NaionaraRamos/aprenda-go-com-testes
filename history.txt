@@ -1,0 +1,14 @@
+go test
+go test -v
+go test -bench=.
+go test -cover
+godoc -hhtp=:8000
+go get -u github.com/msoap/go-carpet
+sudo ln -s $(go env GOPATH)/bin/go-carpet /usr/local/bin/go-carpet
+go-carpet
+go test -v
+go test -cover
+go test -run TestCarteira/Depositar
+go test -run TestCarteira/Retirar
+go get -u github.com/kisielk/errcheck
+errcheck
